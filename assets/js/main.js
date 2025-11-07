@@ -5,7 +5,7 @@
 
   // Highlight the current page in the navigation menu
   const links = document.querySelectorAll("nav a");
-  const current = window.location.pathname.split("/").pop();
+  const current = window.location.pathname.split("/").pop() || "index.html";
 
   // Remove any existing active class
   links.forEach(link => link.classList.remove("active"));
