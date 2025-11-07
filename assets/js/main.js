@@ -1,13 +1,24 @@
-/**
-* Template Name: FolioOne
-* Template URL: https://bootstrapmade.com/folioone-bootstrap-portfolio-website-template/
-* Updated: Aug 23 2025 with Bootstrap v5.3.7
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 (function() {
   "use strict";
+
+  // Highlight the current page in the navigation menu
+  const links = document.querySelectorAll("nav a");
+  const current = window.location.pathname.split("/").pop();
+
+  // Remove any existing active class
+  links.forEach(link => link.classList.remove("active"));
+
+  // Add active class to the current page link
+  links.forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add("active");
+    }
+  });
+
+
+
 
   /**
    * Apply .scrolled class to the body as the page is scrolled down
@@ -86,7 +97,7 @@
       top: 0,
       behavior: 'smooth'
     });
-  });
+  }); 
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
